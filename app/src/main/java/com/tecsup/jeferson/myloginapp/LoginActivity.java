@@ -64,9 +64,13 @@ public class LoginActivity extends AppCompatActivity {
         User user = UserRepository.login(username, password);
 
         if(user == null){
-            Toast.makeText(this, "Usuario o Contraseña invalidos", Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(this, "Usuario o Contraseña invalidos", Toast.LENGTH_SHORT).show();
             loginPanel.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
+            progressBar.setVisibility(View.GONE);*/
+            Intent intent = new Intent(this, RegistroActivity.class);
+            intent.putExtra("usuario",username);
+            intent.putExtra("contraseña",password);
+            startActivity(intent);
             return;
         }
 

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="com.tecsup.jeferson.myloginapp.RegistroActivity">
+
+    <TextView
+        android:id="@+id/registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginStart="120dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/txt_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textSize="20sp"
+            android:textStyle="italic|bold|normal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/act_nombre"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Escribir su nombre"
+            android:layout_alignParentEnd="true"
+            android:layout_alignEnd="@+id/txt_nombre"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/txt_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario:"
+            android:textSize="20sp"
+            android:textStyle="italic|bold|normal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/act_usuario"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Escribir su Usuario"
+            android:layout_alignParentEnd="true"
+            android:layout_alignEnd="@+id/txt_user"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/txt_contra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña:"
+            android:textSize="20sp"
+            android:textStyle="italic|bold|normal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/act_contraseña"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Escribir su Contraseña"
+            android:layout_alignParentEnd="true"
+            android:inputType="textPassword"
+            android:layout_alignEnd="@+id/txt_contra"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="120dp"/>
+
+</LinearLayout>

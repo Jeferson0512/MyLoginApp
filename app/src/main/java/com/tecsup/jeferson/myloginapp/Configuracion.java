@@ -1,10 +1,12 @@
 package com.tecsup.jeferson.myloginapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 
 public class Configuracion extends AppCompatActivity {
@@ -27,7 +29,20 @@ public class Configuracion extends AppCompatActivity {
 
         User user = UserRepository.getUser(username);
 
-        edt_fullname.setText(user.getUsername());
+        edt_fullname.setText(user.getFullname());
 
+        Guardar_Datos(null);
+    }
+    public void Guardar_Datos(View view){
+
+        String username = sharedPreferences.getString("username", null);
+        Log.d(TAG, "username: " + username);
+
+        User user = UserRepository.getUser(username);
+
+        user.setFullname(edt_fullname.getText().toString());
+
+        Intent intent = new Intent(this, PrincipalActivity.class);
+        startActivity(intent);
     }
 }
