@@ -12,8 +12,8 @@ public class UserRepository {
     public static List<User> users = new ArrayList<>();
 
     static {
-        users.add(new User("jbujaico", "tecsup", "Jeferson Bujaico"));
-        users.add(new User("bbujaico", "tecsup", "Benjamin Bujaico"));
+        users.add(new User(100,"jbujaico", "tecsup", "Jeferson Bujaico"));
+        users.add(new User(200,"bbujaico", "tecsup", "Benjamin Bujaico"));
     }
 
     public static User login(String username, String password){
@@ -23,6 +23,16 @@ public class UserRepository {
             }
         }
         return null;
+    }
+
+
+    public static User Useradd (String username, String password, String fullname){
+
+        for(int i=400;i>=9999;i+=100){
+            users.add(new User(i,username, password,fullname));
+        }
+        return login(username,password);
+
     }
 
     public static User getUser(String username){

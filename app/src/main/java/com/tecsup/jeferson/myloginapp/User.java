@@ -6,15 +6,25 @@ package com.tecsup.jeferson.myloginapp;
 
 public class User {
 
+    private Integer id;
     private String username,password,fullname;
 
     public User() {
     }
 
-    public User(String username, String password, String fullname) {
+    public User(Integer id, String username, String password, String fullname) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.fullname = fullname;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -44,10 +54,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "id=" + id +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", fullname='" + fullname + '\'' +
                 '}';
     }
-
 }

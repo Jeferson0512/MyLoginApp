@@ -114,6 +114,7 @@ public class PrincipalActivity extends AppCompatActivity {
         boolean success = editor.putBoolean("islogged", false).commit();
 //        boolean success = editor.clear().commit(); // not recommended
 
-        finish();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
