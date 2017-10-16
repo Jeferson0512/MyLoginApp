@@ -54,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
 
         String username = usernameInput.getText().toString();
         String password = passwordInput.getText().toString();
-        String fullname=username;
 
         if(username.isEmpty() || password.isEmpty()){
             Toast.makeText(this, "Falta completar las casillas", Toast.LENGTH_SHORT).show();
@@ -68,12 +67,12 @@ public class LoginActivity extends AppCompatActivity {
             /*Toast.makeText(this, "Usuario o Contraseña invalidos", Toast.LENGTH_SHORT).show();
             loginPanel.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);*/
-            /*Intent intent = new Intent(this, RegistroActivity.class);
+            Intent intent = new Intent(this, RegistroActivity.class);
             intent.putExtra("usuario",username);
             intent.putExtra("contraseña",password);
-            startActivity(intent);*/
-            UserRepository.Useradd(fullname,username,password);
-            return;
+            startActivity(intent);
+            /*UserRepository.Useradd(fullname,username,password);
+            */return;
         }
 
         Toast.makeText(this, "Bienvenido " + user.getFullname(), Toast.LENGTH_SHORT).show();

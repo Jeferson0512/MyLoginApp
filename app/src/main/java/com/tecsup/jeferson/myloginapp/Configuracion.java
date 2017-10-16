@@ -20,9 +20,8 @@ public class Configuracion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
 
-        edt_fullname = (EditText)findViewById(R.id.edt_fullname);
-
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        edt_fullname = (EditText)findViewById(R.id.edt_fullname);
 
         String username = sharedPreferences.getString("username", null);
         Log.d(TAG, "username: " + username);
@@ -35,12 +34,15 @@ public class Configuracion extends AppCompatActivity {
     }
     public void Guardar_Datos(View view){
 
+
+
         String username = sharedPreferences.getString("username", null);
         Log.d(TAG, "username: " + username);
 
         User user = UserRepository.getUser(username);
 
         user.setFullname(edt_fullname.getText().toString());
+        sharedPreferences.edit().putString("username",user+"").commit();
 
         Intent intent = new Intent(this, PrincipalActivity.class);
         startActivity(intent);

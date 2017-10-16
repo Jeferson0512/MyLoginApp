@@ -16,6 +16,8 @@ public class UserRepository {
         users.add(new User(200,"bbujaico", "tecsup", "Benjamin Bujaico"));
     }
 
+    private static int _SECUENCIA = 200;
+
     public static User login(String username, String password){
         for (User user: users){
             if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)){
@@ -28,9 +30,8 @@ public class UserRepository {
 
     public static User Useradd (String username, String password, String fullname){
 
-        for(int i=400;i>=9999;i+=100){
-            users.add(new User(i,username, password,fullname));
-        }
+        users.add(new User(++_SECUENCIA,username, password,fullname));
+
         return login(username,password);
 
     }

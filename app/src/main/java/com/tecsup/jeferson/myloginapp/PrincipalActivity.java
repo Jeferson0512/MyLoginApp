@@ -60,7 +60,6 @@ public class PrincipalActivity extends AppCompatActivity {
 
                     case R.id.nav_settings:
                         Toast.makeText(PrincipalActivity.this, "Ingresando a Configuraciones", Toast.LENGTH_SHORT).show();
-
                         Intent intent = new Intent(PrincipalActivity.this, Configuracion.class);
                         startActivity(intent);
                         break;
@@ -77,10 +76,13 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
 
+        Log.d(TAG, UserRepository.users+"");
+
         String username = sharedPreferences.getString("username", null);
         Log.d(TAG, "username: " + username);
 
         User user = UserRepository.getUser(username);
+        Log.d(TAG, user+"");
 
         // Change navigation header information
         ImageView photoImage = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.menu_photo);
